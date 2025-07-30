@@ -2,31 +2,40 @@ import Todo from "./Todo";
 
 export default function TodoList() {
     const data = [
-        {
-            text: "Belajar HTML",
-            isCompleted: true,
-            isDeleted: true
-        },
-        {
-            text: "Belajar CSS",
-            isCompleted: true,
-        },
-        {
-            text: "Belajar Javascript",
-            isCompleted: true
-        },
-        {
-            text: "Belajar React",
-            isCompleted: false
-        }
-    ]
+      {
+        id: 1,
+        text: "Belajar HTML",
+        isCompleted: true,
+        isDeleted: true,
+      },
+      {
+        id: 2,
+        text: "Belajar CSS",
+        isCompleted: true,
+      },
+      {
+        id: 3,
+        text: "Belajar Javascript",
+        isCompleted: true,
+      },
+      {
+        id: 4,
+        text: "Belajar React",
+        isCompleted: false,
+      },
+      {
+        id: 5,
+        text: "Belajar React Router",
+        isCompleted: false,
+      },
+    ];
 
-    const todos = data.map((todo) => (
-        <Todo {...todo} />
-    ));
+
   return (
     <ul>
-      {todos}
+          {data.map((todo) => (
+          <Todo key={todo.id} {...todo} />
+      ))}
     </ul>
   );
 }
